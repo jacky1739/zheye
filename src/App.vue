@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <column-list :list="list"></column-list>
+    <column-list :list="testData"></column-list>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default defineComponent({
   },
   setup () {
     return {
-      list: testData
+      testData
     }
   }
 })
