@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import ColumnList, { ColumnProps } from './components/ColumnList.vue'
 const testData: ColumnProps[] = [
   {
@@ -18,13 +17,19 @@ const testData: ColumnProps[] = [
   {
     id: 2,
     title: 'test2的專欄',
-    description: '這是test2專欄, 有一段非常有意思的簡介, 可以更新一下歐',
-    avatar: 'https://avatars.githubusercontent.com/u/6128107?s=280&v=4'
+    description: '這是test2專欄, 有一段非常有意思的簡介, 可以更新一下歐'
+    // avatar: 'https://avatars.githubusercontent.com/u/6128107?s=280&v=4'
   },
   {
     id: 3,
     title: 'test3的專欄',
     description: '這是test3專欄, 有一段非常有意思的簡介, 可以更新一下歐',
+    avatar: 'https://avatars.githubusercontent.com/u/6128107?s=280&v=4'
+  },
+  {
+    id: 4,
+    title: 'test4的專欄',
+    description: '這是test4專欄, 有一段非常有意思的簡介, 可以更新一下歐',
     avatar: 'https://avatars.githubusercontent.com/u/6128107?s=280&v=4'
   }
 ]
