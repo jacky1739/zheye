@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-4 mb-4" v-for="column in columnList" :key="column.id">
-      <div class="card h-100 shadow-sm text-center" style="width: 18rem;">
+      <div class="card h-100 w-100 shadow-sm text-center" style="width: 18rem;">
         <div class="card-body">
           <img :src="column.avatar" class="rounded-circle border border-light w-25 my-3" :alt="column.title">
           <h5 class="card-title">{{ column.title }}</h5>
