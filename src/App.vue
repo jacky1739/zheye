@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ColumnList, { ColumnProps } from './components/ColumnList.vue'
-import GlobalHeader, { UserProps } from './components/GloablHeader.vue'
+import GlobalHeader, { UserProps } from './components/GlobalHeader.vue'
 
 const currentUser: UserProps = {
   isLogin: true,
