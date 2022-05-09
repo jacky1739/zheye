@@ -20,7 +20,7 @@ export default defineComponent({
 </script>
 
 <style>
-.dropdown-option .is-disable * {
+.dropdown-option.is-disable * {
   color: #6c757d;
   pointer-events: none;
   background-color: transparent;
