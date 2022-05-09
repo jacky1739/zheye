@@ -2,12 +2,7 @@
   <div class="dropdown">
     <a href="#" class="btn btn-outline-light my-2 dropdown-toggle" @click.prevent="toggleOpen">{{ title }}</a>
     <ul class="dropdown-menu" :style="{ display: 'block' }" v-if="isOpen">
-      <li class="dropdown-item">
-        <a href="#">新建文章</a>
-      </li>
-      <li class="dropdown-item">
-        <a href="#">編輯資料</a>
-      </li>
+      <slot></slot>
     </ul>
   </div>
 </template>
