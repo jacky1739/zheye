@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
+  <div class="dropdown" ref="dropdownRef">
     <a href="#" class="btn btn-outline-light my-2 dropdown-toggle" @click.prevent="toggleOpen">{{ title }}</a>
     <ul class="dropdown-menu" :style="{ display: 'block' }" v-if="isOpen">
       <slot></slot>
@@ -8,7 +8,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
+import useClickOutside from '../hooks/useClickOutside'
+
 export default defineComponent({
   name: 'dropdown',
   props: {
@@ -19,12 +21,25 @@ export default defineComponent({
   },
   setup () {
     const isOpen = ref(false)
-
+    const dropdownRef = ref<null | HTMLElement>(null) // 宣告為一個聯合類型和return就可以取得DOM的節點
     const toggleOpen = () => {
       isOpen.value = !isOpen.value
     }
+
+    // const isClickOutside = useClickOutside(dropdownRef)
+    // watch(isClickOutside, () => {
+    //   if (isOpen.value && isClickOutside.value) {
+    //     isOpen.value = false
+    //   }
+    // })\
+
+    const isClickOutside = useClickOutside(dropdownRef)
+    watch(isClickOutside, () => {
+      isOpen.value = !isOpen.value
+    })
+
     return {
-      isOpen, toggleOpen
+      isOpen, toggleOpen, dropdownRef
     }
   }
 })
