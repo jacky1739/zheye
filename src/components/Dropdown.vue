@@ -21,22 +21,18 @@ export default defineComponent({
   },
   setup () {
     const isOpen = ref(false)
+
     const dropdownRef = ref<null | HTMLElement>(null) // 宣告為一個聯合類型和return就可以取得DOM的節點
+    const isClickOutside = useClickOutside(dropdownRef)
+    watch(isClickOutside, () => {
+      if (isOpen.value && isClickOutside.value) {
+        isOpen.value = !isOpen.value
+      }
+    })
+
     const toggleOpen = () => {
       isOpen.value = !isOpen.value
     }
-
-    // const isClickOutside = useClickOutside(dropdownRef)
-    // watch(isClickOutside, () => {
-    //   if (isOpen.value && isClickOutside.value) {
-    //     isOpen.value = false
-    //   }
-    // })\
-
-    const isClickOutside = useClickOutside(dropdownRef)
-    watch(isClickOutside, () => {
-      isOpen.value = !isOpen.value
-    })
 
     return {
       isOpen, toggleOpen, dropdownRef
